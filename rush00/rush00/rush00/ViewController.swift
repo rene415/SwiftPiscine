@@ -14,9 +14,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var tblView: UITableView!
     
     let movieName = ["Joker", "Snatch", "Kung fu hustle"]
+    let movieImg = [#imageLiteral(resourceName: "download"),#imageLiteral(resourceName: "download2"),#imageLiteral(resourceName: "download3") ]
+    let movieSubTitle = ["Put On A Happy Face", "Stealin' Stones and Breakin' Bones", "So Many Gangsters...So Little Time"]
     
     var searchMovie = [String]()
     var searching = false
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,6 +70,8 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
+        cell?.detailTextLabel?.text = movieSubTitle[indexPath.row]
+        cell?.imageView?.image = movieImg[indexPath.row]
         if searching {
             cell?.textLabel?.text = searchMovie[indexPath.row]
         } else {
