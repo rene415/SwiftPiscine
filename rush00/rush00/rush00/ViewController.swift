@@ -13,7 +13,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var searchBar:UISearchBar!
     @IBOutlet weak var tblView: UITableView!
     
-    let movieName = ["joker", "snatch", "kung fu hustle"]
+    let movieName = ["Joker", "Snatch", "Kung fu hustle"]
+    
+    var searchMovie = [String]()
+    var searching = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,18 +58,37 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if searching {
+           return searchMovie.count
+        } else {
         return movieName.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
-        cell?.textLabel?.text = movieName[indexPath.row]
+        if searching {
+            cell?.textLabel?.text = searchMovie[indexPath.row]
+        } else {
+            cell?.textLabel?.text = movieName[indexPath.row]
+        }
         return cell!
     }
-    
 }
 
-
+extension ViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchMovie = movieName.filter({$0.lowercased().prefix(searchText.count) == searchText.lowercased()})
+        searching = true
+        tblView.reloadData()
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searching = false
+        searchBar.text = ""
+        tblView.reloadData()
+    }
+}
 
 
 
