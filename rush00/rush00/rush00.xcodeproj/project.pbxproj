@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3153594B234BD22400DF3886 /* secondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3153594A234BD22400DF3886 /* secondViewController.swift */; };
 		5E6AF6382349553500BF70FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6AF6372349553500BF70FA /* AppDelegate.swift */; };
 		5E6AF63A2349553500BF70FA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6AF6392349553500BF70FA /* ViewController.swift */; };
 		5E6AF63D2349553500BF70FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E6AF63B2349553500BF70FA /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3153594A234BD22400DF3886 /* secondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = secondViewController.swift; sourceTree = "<group>"; };
 		521D5D5A234986A800489B02 /* Network */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Network; path = /nfs/2018/v/vdauverg/Desktop/SwiftPiscine/rush00/rush00/rush00/Network; sourceTree = "<absolute>"; };
 		5E6AF6342349553500BF70FA /* rush00.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rush00.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E6AF6372349553500BF70FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 			children = (
 				5E6AF6372349553500BF70FA /* AppDelegate.swift */,
 				5E6AF6392349553500BF70FA /* ViewController.swift */,
+				3153594A234BD22400DF3886 /* secondViewController.swift */,
 				5E6AF63B2349553500BF70FA /* Main.storyboard */,
 				5E6AF63E2349553700BF70FA /* Assets.xcassets */,
 				5E6AF6402349553700BF70FA /* LaunchScreen.storyboard */,
@@ -259,6 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E6AF63A2349553500BF70FA /* ViewController.swift in Sources */,
+				3153594B234BD22400DF3886 /* secondViewController.swift in Sources */,
 				5E6AF6382349553500BF70FA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

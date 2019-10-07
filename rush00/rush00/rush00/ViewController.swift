@@ -19,8 +19,8 @@ class ViewController: UIViewController {
     
     var searchMovie = [String]()
     var searching = false
+    var textToBeSent = ""
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -78,6 +78,16 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
             cell?.textLabel?.text = movieName[indexPath.row]
         }
         return cell!
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        textToBeSent = movieName[indexPath.row]
+        self.performSegue(withIdentifier: "infoView", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let info = segue.destination as! secondViewController
+        info.myString = textToBeSent
     }
 }
 
